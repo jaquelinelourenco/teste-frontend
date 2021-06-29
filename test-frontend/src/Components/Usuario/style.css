@@ -1,0 +1,11 @@
+.button-busca {
+  background-color: rgb(0, 162, 255);
+  padding: 10px 16px 10px 16px;
+  border: none;
+  color: white;
+}
+
+.button-busca:hover {
+  padding: 12px 18px 12px 18px;
+  background-color: #0954AB;
+}
