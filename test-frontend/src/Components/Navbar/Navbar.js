@@ -1,5 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import CreateNewFolderOutlinedIcon from '@material-ui/icons/CreateNewFolderOutlined';
+import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
+import "./style.css";
 
 export default class Navbar extends React.Component {
   state = {
@@ -35,7 +40,7 @@ export default class Navbar extends React.Component {
 
   getPageDescription = () => {
     if (this.state.currentPath.startsWith("/busca")) {
-      return "Buscador de perfis do GitHub";
+      return "Busca de perfis do GitHub";
     } else if (this.state.currentPath.startsWith("/repos")) {
       return (
         <span>
@@ -55,8 +60,8 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand bg-dark navbar-dark">
-          <span className="navbar-brand">GitHub Search</span>
+        <nav className="navbar navbar-expand">
+          <span className="navbar-brand"> GitHub Search <SearchIcon/> </span>
 
           <ul className="navbar-nav ml-auto">
             <li className={this.getActiveRouteClassName("/busca")}>
@@ -65,6 +70,7 @@ export default class Navbar extends React.Component {
                 to={this.getNavLink("/busca")}
               >
                 Busca
+                <AccountCircleIcon />
               </Link>
             </li>
             <li className={this.getActiveRouteClassName("/repos")}>
@@ -73,6 +79,7 @@ export default class Navbar extends React.Component {
                 to={this.getNavLink("/repos")}
               >
                 Repositórios
+                <CreateNewFolderOutlinedIcon />
               </Link>
             </li>
             <li className={this.getActiveRouteClassName("/starred")}>
@@ -81,6 +88,7 @@ export default class Navbar extends React.Component {
                 to={this.getNavLink("/starred")}
               >
                 Stars
+                <StarBorderOutlinedIcon />
               </Link>
             </li>
           </ul>

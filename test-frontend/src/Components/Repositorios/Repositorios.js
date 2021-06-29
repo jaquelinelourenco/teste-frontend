@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import ServiceUser from "../../Services/API";
+import "./style.css";
 
 export default class Repositorios extends React.Component {
   state = {
